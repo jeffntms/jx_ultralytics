@@ -1065,7 +1065,10 @@ class Exporter:
             output_integer_quantized_tflite=self.args.int8,
             quant_type="per-tensor",  # "per-tensor" (faster) or "per-channel" (slower but more accurate)
             custom_input_op_name_np_data_path=np_data,
-            input_output_quant_dtype=io_quant_dtype,
+            # 20250325 jeffreyx
+            input_quant_dtype=io_quant_dtype,
+            output_quant_dtype=io_quant_dtype,
+            #input_output_quant_dtype=io_quant_dtype,
             disable_group_convolution=True,  # for end-to-end model compatibility
             enable_batchmatmul_unfold=True,  # for end-to-end model compatibility
             param_replacement_file="ultralytics/utils/replace.json"
