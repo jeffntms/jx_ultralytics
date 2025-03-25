@@ -1067,7 +1067,7 @@ class Exporter:
             custom_input_op_name_np_data_path=np_data,
             # 20250325 jeffreyx
             input_quant_dtype="uint8",
-            output_quant_dtype="float32",
+            output_quant_dtype="uint8",#"float32",
             #input_output_quant_dtype=io_quant_dtype,
             disable_group_convolution=True,  # for end-to-end model compatibility
             enable_batchmatmul_unfold=True,  # for end-to-end model compatibility
